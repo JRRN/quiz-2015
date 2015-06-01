@@ -5,7 +5,7 @@
 	#page-wrap > .main { border: 1px solid #999; padding: 1%;
 	margin-bottom: 1px; color: black;}
 	
-	section > div { padding: 20px; }
+	section > div { padding: 20px; height: 400px; }
 	header, nav, section { background: #eee; text-align: center;}
 	footer { background: #eee; text-align: center;}
 	nav span { margin: 0px 10px 0px 0px;}
