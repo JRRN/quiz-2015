@@ -4,5 +4,6 @@ body { background: #333; }
 
 h2 span, section h3 { display: none; }
 body { font-size: xx-large; }
-footer, input { font-size: large; }
+input, button { font-size: large; }
 section > div{ height: 440px !important ;}
+footer { font-size: large; }
