@@ -3,11 +3,12 @@
 	<input type="text" name="search" value="Texto a buscar"/>
 	<input type="submit" value="Buscar">
 </form>
-
+<br>
 <table>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>
-			<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+			<td>Tema: <%= quizes[i].tema %> </td>
+			<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %> </a></td>
 			<td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
 			<td>
 			 	<form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
@@ -17,4 +18,5 @@
 		</tr>
 	<% } %>
 </table><p>
+<br>
 <a href="/quizes/new"><button type="button">Crear pregunta</button></a>

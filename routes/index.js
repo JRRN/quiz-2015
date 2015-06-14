@@ -30,6 +30,9 @@ router.get('/quizes/:quizId(\\d+)/edit'		, quizController.edit);
 router.put('/quizes/:quizId(\\d+)'			, quizController.update);
 router.delete('/quizes/:quizId(\\d+)'		, quizController.destroy);
 
+router.get('/temas'							, quizController.showtemas);
+router.get('/temas/:tema'					, quizController.showbytema);
+
 module.exports = router;
 
 
