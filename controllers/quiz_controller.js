@@ -76,6 +76,7 @@ exports.create = function(req, res) {
 
 // GET /quizes/:id
 exports.show = function(req, res) {
+	console.log(res);
 	res.render('quizes/show', { quiz: req.quiz, errors: []});
 };
 // GET /quizes/:id/answer
