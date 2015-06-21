@@ -28,6 +28,20 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use(function(req, res, next){
+    var expire = 60*1000*2;
+    var now = new Date().getTime();
+
+    if(req.session && req.session.lastAccess) {
+    var lifetime = now - req.session.lastAccess;
+        if (expire <= lifetime){
+            delete req.session.user;
+        }
+    }
+    req.session.lastAccess = now;
+    next();
+});
+
 // Helpers dinamicos:
 app.use(function(req, res, next) {
 
