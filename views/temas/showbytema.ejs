@@ -1,12 +1,15 @@
-<br>
-<p>Tema:  <%= quizes[0].tema %></p>
-<table>
+<div class="panel panel-default table-responsive">
+  <div class="panel-heading">Tema: <%= quizes[0].tema %></div>
+  <table class="table">
+    <tbody>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>
 			<td><a href="../quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %> </a></td>
 		</tr>
 	<% } %>
-</table><p>
+</table>
+</div>
+</div>
 <p>
 	<a href="/temas">Volver</a>
 </p>

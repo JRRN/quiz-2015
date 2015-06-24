@@ -1,0 +1,54 @@
+<div class="panel panel-default table-responsive">
+  <div class="panel-heading">Preguntas</div>
+  <table class="table">
+  	<thead>
+      <tr>
+        <th>#</th>
+        <th>Tema</th>
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+        <th>Fecha Creación</th>
+        <th>Fecha Actualización</th>
+      </tr>
+    </thead>
+    <tbody>
+		<% var i; for (i=0; i < quizes.length; i++) {%>
+        	<tr>
+		    <td><%=quizes[i].id%></td>
+		    <td><%=quizes[i].tema%></td>
+		    <td><%=quizes[i].pregunta%></td>
+		    <td><%=quizes[i].respuesta%></td>
+		    <td><%=quizes[i].createdAt%></td>
+		    <td><%=quizes[i].updatedAt%></td>
+		    </tr>
+		<%}%>
+	<tbody>
+  </table>
+</div>
+
+<div class="panel panel-default table-responsive">
+  <div class="panel-heading">Comentarios</div>
+  <table class="table">
+  	<thead>
+      <tr>
+        <th>#</th>
+        <th>Pregunta <span class="glyphicon glyphicon-random"/></th>
+        <th>Comentario</th>
+        <th>Publicado</th>
+        <th>Fecha Creación</th>
+        <th>Fecha Actualización</th>
+      </tr>
+    </thead>
+	  <% var i; for (i=0; i < comments.length; i++) {%>
+	    <tr>
+	    <td><%=comments[i].id%></td>
+	    <td><%=comments[i].QuizId%></td>
+	    <td><%=comments[i].texto%></td>
+	    <td><%=comments[i].publicado%></td>
+	    <td><%=comments[i].createdAt%></td>
+	    <td><%=comments[i].updatedAt%></td>
+	    </tr>
+	  <%}%>
+  </table>
+</div>
+

@@ -10,19 +10,23 @@
 	</a>
 </p>
 
-<p>
-	<strong>Comentarios:</strong></p>
+<div class="panel panel-default table-responsive">
+  <div class="panel-heading">Comentarios</div>
+  <table class="table">
+    <tbody>
 		<%for(index in quiz.Comments){%>
 			<%if(quiz.Comments[index].publicado || session.user){%>
-				<p>- <%=quiz.Comments[index].texto%>
+				<tr><th>- <%=quiz.Comments[index].texto%>
 					<%if(session.user && !quiz.Comments[index].publicado){%>
  						<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/publish">
  							<button>Publicar</button></a>
  					<%}%>
- 				</p>
+ 				</th></tr>
  			<%}%>
 		<%}%>
-</p>
+  </table>
+  </div>
+</div>
 <p>
 	<a href="/quizes">Volver</a>
 </p>

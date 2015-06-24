@@ -3,7 +3,10 @@ var router = express.Router();
 
 var quizController 		= require('../controllers/quiz_controller');
 var commentController 	= require('../controllers/comment_controller');
-var sessionController = require('../controllers/session_controller');
+var sessionController 	= require('../controllers/session_controller');
+var statsController		= require('../controllers/stats_controller');
+var authorController	= require('../controllers/author_controller');
+var dbController		= require('../controllers/db_controller');
 
 // Página de entrada (home page)
 router.get('/', function(req, res) {
@@ -14,14 +17,7 @@ router.get('/', function(req, res) {
 router.param('quizId'		, quizController.load); // autoload :quizId
 router.param('commentId'	, commentController.load); 
 
-router.get('/author',function(req,res){
-	res.render('author', {
-				fotoPerfil: '/images/foto.png',
-				Nombre: 'J.Rafa RN',
-				Video: 'http://vjs.zencdn.net/v/oceans.mp4',
-				errors: []
-	});
-});
+router.get('/author'														, authorController.authors);
 
 router.get('/login'															, sessionController.new); // formulario login
 router.post('/login'														, sessionController.create); // crear sesión
@@ -43,6 +39,9 @@ router.get('/temas/:tema'													, quizController.showbytema);
 router.get('/quizes/:quizId(\\d+)/comments/new'								, sessionController.loginRequired, commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments'								, sessionController.loginRequired, commentController.create);
 router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish'		, sessionController.loginRequired, commentController.publish);
+
+router.get('/estadisticas'													, statsController.show);
+router.get('/db'															, dbController.show);
 
 module.exports = router;
 

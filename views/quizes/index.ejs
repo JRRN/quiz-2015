@@ -4,10 +4,18 @@
 	<input type="submit" value="Buscar">
 </form>
 <br>
-<table>
+<div class="panel panel-default table-responsive">
+  <table class="table">
+  	<thead>
+      <tr>
+        <th>Tema</th>
+        <th>Pregunta</th>
+      </tr>
+    </thead>
+    <tbody>
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>
-			<td>Tema: <%= quizes[i].tema %> </td>
+			<td><a name="<%= quizes[i].tema %>" href="temas/<%= quizes[i].tema %>"><%= quizes[i].tema %> </a></td>
 			<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %> </a></td>
 			<% if(session.user){%>
 				<td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
@@ -19,8 +27,10 @@
  			<%}%>
 		</tr>
 	<% } %>
-</table><p>
+  </table>
+</div>
 <br>
 <% if(session.user){%>
 	<a href="/quizes/new"><button type="button">Crear pregunta</button></a>
 <%}%>
+

@@ -1,4 +1,16 @@
 <p>
-	<%= respuesta %>
+	<%if (respuesta != 'Incorrecto') {%>
+		<div class="alert alert-success" role="alert">
+			<span class="glyphicon glyphicon-ok">
+			</span>
+			<%= respuesta %></div>
+	<%}else{%>
+		<div class="alert alert-danger" role="alert">
+			<span class="glyphicon glyphicon-remove">
+			</span>
+			<%= respuesta %>
+		</div>
+	<%}%>
+	<br>
 	<a href="/quizes/<%= quiz.id %>">Volver</a>
 </p>

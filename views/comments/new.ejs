@@ -1,5 +1,14 @@
-Añadir comentario: <p>
 <form method="post" action="/quizes/<%=quizid%>/comments/" >
-<input type="text" id="comment" name="comment[texto]" value=""/> <p>
+<div class="panel panel-default table-responsive">
+  <div class="panel-heading">Añadir comentario: </div>
+  <table class="table">
+  	<tr><th>
+		<textarea class="responsive-input" cols="100%" rows="5" id="comment" name="comment[texto]" value="">
+		</textarea>
+	</th></tr>
+  </table>
+  </div>
+</div>
+<br>
 <button type="submit">Enviar</button>
 </form>
